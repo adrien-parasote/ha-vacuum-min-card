@@ -1,5 +1,6 @@
 {
   "name": "Vacuum card minimal for main dashboard",
   "render_readme": true,
+  "content_in_root": false,
   "filename": "vacuum-card-min.js"
 }
