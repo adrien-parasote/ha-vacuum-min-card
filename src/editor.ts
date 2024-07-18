@@ -1,5 +1,5 @@
 import { css, html, LitElement } from 'lit';
-import { state } from 'lit/decorators/state';
+import { state } from 'lit/decorators/state.js';
 
 export class ToggleCardTypeScriptEditor extends LitElement {
   @state() _config;

@@ -1,6 +1,6 @@
 import { html, LitElement, TemplateResult, nothing } from 'lit';
 import { styles } from './card.styles';
-import { state } from 'lit/decorators/state';
+import { state } from 'lit/decorators/state.js';
 
 import { HassEntity } from 'home-assistant-js-websocket';
 import { HomeAssistant, LovelaceCardConfig } from 'custom-card-helpers';
