@@ -1,0 +1,45 @@
+{
+  "name": "vacuum-min-card",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Minimal card to monitor vacuum cleaner for Home Assistant Lovelace UI",
+  "main": "dist/vacuum-card-min.js",
+  "scripts": {
+    "jshint": "jshint",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier --write .",
+    "build": "npm run format && npm run lint && npm run jshint"
+  },
+  "keywords": [
+    "home-assistant",
+    "homeassistant",
+    "hass",
+    "automation",
+    "lovelace",
+    "custom-cards-min",
+    "vacuum"
+  ],
+  "author": "Adrien Parasote <adrien.parasote@gmail.com>",
+  "license": "GNU",
+  "devDependencies": {
+    "@eslint/js": "9.7.0",
+    "@types/eslint__js": "8.42.3",
+    "eslint": "8.57.0",
+    "jshint": "2.13.6",
+    "prettier": "3.3.3"
+  },
+  "engines": {
+    "node": "20.15.1"
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "dependencies": {
+    "lit": "3.1.4"
+  }
+}
