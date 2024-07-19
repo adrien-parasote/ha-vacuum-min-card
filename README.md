@@ -4,8 +4,7 @@ Vacuum minimal card for HA dashboard
 
 TODO :
 
-- card code
-- prettier review
-- optimize import
-- rollup minify
-- mustache templating ?
+-   card code
+-   rollup minify
+-   mustache templating ?
+-   dynamique version

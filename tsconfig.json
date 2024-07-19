@@ -1,22 +1,22 @@
 {
-  "compilerOptions": {
-    "target": "es2017",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noEmit": true,
-    "lib": ["es2017", "dom", "dom.iterable"],
-    "experimentalDecorators": true,
-    "typeRoots": [
-      "./node_modules/@types",
-      "./src/declarations.d.ts",
-      "./node_modules/lit/decorators/state.js"
-    ],
-    "resolveJsonModule": true,
-    "outDir": "./dest",
-    "noEmitOnError": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": false,
-    "skipLibCheck": true,
-    "useDefineForClassFields": false
-  }
+    "compilerOptions": {
+        "target": "es2017",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "noEmit": true,
+        "lib": ["es2017", "dom", "dom.iterable"],
+        "experimentalDecorators": true,
+        "typeRoots": [
+            "./node_modules/@types",
+            "./src/declarations.d.ts",
+            "./node_modules/lit/decorators/state.js"
+        ],
+        "resolveJsonModule": true,
+        "outDir": "./dest",
+        "noEmitOnError": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": false,
+        "skipLibCheck": true,
+        "useDefineForClassFields": false
+    }
 }

@@ -1,61 +1,62 @@
 {
-  "name": "vacuum-min-card",
-  "version": "0.0.3",
-  "type": "module",
-  "description": "Minimal card to monitor vacuum cleaner for Home Assistant Lovelace UI",
-  "main": "dist/vacuum-card-min.js",
-  "keywords": [
-    "home-assistant",
-    "homeassistant",
-    "hass",
-    "automation",
-    "lovelace",
-    "custom-cards-min",
-    "vacuum"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/adrien-parasote/vacuum-card-min.git"
-  },
-  "author": "Adrien Parasote <adrien.parasote@gmail.com>",
-  "license": "GNU",
-  "scripts": {
-    "start": "rollup -c --watch",
-    "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix",
-    "format": "prettier --config .prettierrc . --write",
-    "build": "rollup -c",
-    "deploy": "npm run lint && npm run format && npm run build"
-  },
-  "devDependencies": {
-    "@open-wc/building-rollup": "^3.0.2",
-    "@rollup/plugin-commonjs": "^26.0.1",
-    "@rollup/plugin-image": "^3.0.3",
-    "@rollup/plugin-json": "^6.1.0",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-replace": "^5.0.7",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@types/node": "20.14.11",
-    "@typescript-eslint/eslint-plugin": "7.16.1",
-    "@typescript-eslint/parser": "7.16.1",
-    "deepmerge": "^4.3.1",
-    "eslint": "8.57.0",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-prettier": "5.2.1",
-    "postcss-preset-env": "^9.6.0",
-    "prettier": "3.3.3",
-    "rollup": "^3.21.0",
-    "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-postcss-lit": "^2.1.0",
-    "rollup-plugin-typescript2": "^0.36.0",
-    "typescript": "5.5.3"
-  },
-  "engines": {
-    "node": "20.15.1"
-  },
-  "dependencies": {
-    "custom-card-helpers": "1.9.0",
-    "home-assistant-js-websocket": "9.4.0",
-    "lit": "3.1.4"
-  }
+    "name": "vacuum-min-card",
+    "version": "0.0.3",
+    "type": "module",
+    "description": "Minimal card to monitor vacuum cleaner for Home Assistant Lovelace UI",
+    "main": "dist/vacuum-card-min.js",
+    "keywords": [
+        "home-assistant",
+        "homeassistant",
+        "hass",
+        "automation",
+        "lovelace",
+        "custom-cards-min",
+        "vacuum"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/adrien-parasote/vacuum-card-min.git"
+    },
+    "author": "Adrien Parasote <adrien.parasote@gmail.com>",
+    "license": "GNU",
+    "scripts": {
+        "start": "rollup -c --watch",
+        "lint": "eslint . --ext .ts",
+        "lint:fix": "eslint . --ext .ts --fix",
+        "format": "prettier --config .prettierrc . --write",
+        "build": "rollup -c",
+        "deploy": "npm run lint && npm run format && npm run build"
+    },
+    "devDependencies": {
+        "@open-wc/building-rollup": "^3.0.2",
+        "@rollup/plugin-commonjs": "^26.0.1",
+        "@rollup/plugin-image": "^3.0.3",
+        "@rollup/plugin-json": "^6.1.0",
+        "@rollup/plugin-node-resolve": "^15.2.3",
+        "@rollup/plugin-replace": "^5.0.7",
+        "@rollup/plugin-terser": "^0.4.4",
+        "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+        "@types/node": "20.14.11",
+        "@typescript-eslint/eslint-plugin": "7.16.1",
+        "@typescript-eslint/parser": "7.16.1",
+        "deepmerge": "^4.3.1",
+        "eslint": "8.57.0",
+        "eslint-config-prettier": "9.1.0",
+        "eslint-plugin-prettier": "5.2.1",
+        "postcss-preset-env": "^9.6.0",
+        "prettier": "^3.3.3",
+        "rollup": "^3.21.0",
+        "rollup-plugin-postcss": "^4.0.2",
+        "rollup-plugin-postcss-lit": "^2.1.0",
+        "rollup-plugin-typescript2": "^0.36.0",
+        "typescript": "5.5.3"
+    },
+    "engines": {
+        "node": "20.15.1"
+    },
+    "dependencies": {
+        "custom-card-helpers": "1.9.0",
+        "home-assistant-js-websocket": "9.4.0",
+        "lit": "3.1.4"
+    }
 }

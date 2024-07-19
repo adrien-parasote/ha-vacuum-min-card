@@ -1,91 +1,93 @@
-import { CSSResultGroup, html, LitElement, TemplateResult, nothing } from 'lit';
-import styles from './css/card.css';
+import { HomeAssistant } from 'custom-card-helpers';
+import { HassEntity } from 'home-assistant-js-websocket';
+import { CSSResultGroup, LitElement, TemplateResult, html, nothing } from 'lit';
 import { state } from 'lit/decorators/state.js';
+
+import styles from './css/card.css';
 import { Config } from './types';
 
-import { HassEntity } from 'home-assistant-js-websocket';
-import { HomeAssistant } from 'custom-card-helpers';
-
 export class VacuumCardMinTypeScript extends LitElement {
-  // internal reactive states
-  @state() private _header: string | typeof nothing;
-  @state() private _entity: string;
-  @state() private _name: string;
-  @state() private _state: HassEntity;
-  @state() private _status: string;
-  @state() private _version: string;
+    // internal reactive states
+    @state() private _header: string | typeof nothing;
+    @state() private _entity: string;
+    @state() private _name: string;
+    @state() private _state: HassEntity;
+    @state() private _status: string;
+    @state() private _version: string;
 
-  // private property
-  private _hass;
+    // private property
+    private _hass;
 
-  // lifecycle interface
-  setConfig(config: Config) {
-    this._header = config.header === '' ? nothing : config.header;
-    this._entity = config.entity;
-    this._version = 'COMPONENT_VERSION_VALUE'; // String will be replaced by Rollup
-    // call set hass() to immediately adjust to a changed entity
-    // while editing the entity in the card editor
-    if (this._hass) {
-      this.hass = this._hass;
+    // lifecycle interface
+    setConfig(config: Config) {
+        this._header = config.header === '' ? nothing : config.header;
+        this._entity = config.entity;
+        this._version = 'COMPONENT_VERSION_VALUE'; // String will be replaced by Rollup
+        // call set hass() to immediately adjust to a changed entity
+        // while editing the entity in the card editor
+        if (this._hass) {
+            this.hass = this._hass;
+        }
     }
-  }
 
-  set hass(hass: HomeAssistant) {
-    this._hass = hass;
-    this._state = hass.states[this._entity];
-    if (this._state) {
-      this._status = this._state.state;
-      const fn = this._state.attributes.friendly_name;
-      this._name = fn ? fn : this._entity;
+    set hass(hass: HomeAssistant) {
+        this._hass = hass;
+        this._state = hass.states[this._entity];
+        if (this._state) {
+            this._status = this._state.state;
+            const fn = this._state.attributes.friendly_name;
+            this._name = fn ? fn : this._entity;
+        }
     }
-  }
 
-  // declarative part
-  static get styles(): CSSResultGroup {
-    return styles;
-  }
-
-  render() {
-    let content: TemplateResult;
-    if (!this._state) {
-      content = html` <p class="error">${this._entity} is unavailable.</p> `;
-    } else {
-      content = html`
-        <dl class="dl">
-          <dt class="dt">${this._name}</dt>
-          <dt class="dt">v${this._version}</dt>
-          <dd class="dd" @click="${this.doToggle}">
-            <span class="toggle ${this._status}">
-              <span class="button"></span>
-            </span>
-            <span class="value">${this._status}</span>
-          </dd>
-        </dl>
-      `;
+    // declarative part
+    static get styles(): CSSResultGroup {
+        return styles;
     }
-    return html`
-      <ha-card header="${this._header}">
-        <div class="card-content">${content}</div>
-      </ha-card>
-    `;
-  }
 
-  // event handling
-  doToggle() {
-    this._hass.callService('input_boolean', 'toggle', {
-      entity_id: this._entity
-    });
-  }
+    render() {
+        let content: TemplateResult;
+        if (!this._state) {
+            content = html`
+                <p class="error">${this._entity} is unavailable.</p>
+            `;
+        } else {
+            content = html`
+                <dl class="dl">
+                    <dt class="dt">${this._name}</dt>
+                    <dt class="dt">v${this._version}</dt>
+                    <dd class="dd" @click="${this.doToggle}">
+                        <span class="toggle ${this._status}">
+                            <span class="button"></span>
+                        </span>
+                        <span class="value">${this._status}</span>
+                    </dd>
+                </dl>
+            `;
+        }
+        return html`
+            <ha-card header="${this._header}">
+                <div class="card-content">${content}</div>
+            </ha-card>
+        `;
+    }
 
-  // card configuration
-  static getConfigElement() {
-    return document.createElement('toggle-card-typescript-editor');
-  }
+    // event handling
+    doToggle() {
+        this._hass.callService('input_boolean', 'toggle', {
+            entity_id: this._entity,
+        });
+    }
 
-  static getStubConfig() {
-    return {
-      entity: 'input_boolean.tcts',
-      header: ''
-    };
-  }
+    // card configuration
+    static getConfigElement() {
+        return document.createElement('toggle-card-typescript-editor');
+    }
+
+    static getStubConfig() {
+        return {
+            entity: 'input_boolean.tcts',
+            header: '',
+        };
+    }
 }
