@@ -23,7 +23,9 @@ ha-card {
 .card-header {
     display: flex;
     flex-direction: row;
+    align-items: center;
     border: 1px solid green;
+    padding: 0;
 }
 
 .card-header img {
@@ -52,9 +54,10 @@ ha-card {
 .card-header .battery ha-icon {
     border: 1px solid purple;
 }
-.card-header .battery.icon-title {
+.card-header .battery .icon-title {
     border: 1px solid purple;
     display: inline-block;
     vertical-align: middle;
     padding: 0 3px;
+    font-size: small;
 }
