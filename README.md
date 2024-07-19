@@ -6,5 +6,6 @@ TODO :
 
 - card code
 - prettier review
+- optimize import
 - rollup minify
 - mustache templating ?
