@@ -22,7 +22,10 @@ export const cardTop = (vacuum, imgSrc) =>
             <span class="icon-title">${vacuum.attributes.battery_level}%</span>
         </div> `;
 
-export const cardContent = () => html` <div>todo</div>`;
+export const cardContent = () =>
+    html`<div>home</div>
+        <div>STOP / Start</div>
+        <div>Clean room with list</div> `;
 
 export const cardFooter = (version) =>
     html`<div class="footer">v${version}</div>`;

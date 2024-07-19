@@ -29,7 +29,6 @@ ha-card {
 }
 
 .card-top img {
-    border: 1px solid red;
     width: 75px;
     height: 75px;
 }
@@ -37,28 +36,34 @@ ha-card {
 .card-top .properties {
     display: flex;
     flex-direction: column;
-    border: 1px solid blue;
     padding: 0 10px;
+    width: -webkit-fill-available;
 }
 
 .card-top .properties .vacuum-name {
-    border: 1px solid yellow;
-}
-.card-top .properties .vacuum-state {
-    border: 1px solid yellow;
+    font-size: xx-large;
+    line-height: normal;
 }
 
 .card-top .battery {
-    border: 1px solid purple;
+    display: flex;
+    flex-flow: row;
+    align-self: self-start;
+    margin-top: 7px;
 }
 
-.card-top .battery ha-icon {
-    border: 1px solid purple;
-}
 .card-top .battery .icon-title {
-    border: 1px solid purple;
-    display: inline-block;
-    vertical-align: middle;
     padding: 0 3px;
     font-size: small;
+    align-self: center;
+}
+
+.card-content {
+    margin: 0;
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: row;
+}
+.card-content div {
+    border: 1px solid green;
 }
