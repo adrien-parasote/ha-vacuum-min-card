@@ -1,43 +1,59 @@
+:host {
+    /* todo put here custom variable */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+ha-card {
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+}
+.footer {
+    color: var(--primary-text-color);
+    text-align: end;
+    font-size: xx-small;
+}
 .error {
     color: red;
 }
-.dl {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-.dt {
+
+.card-header {
     display: flex;
-    align-content: center;
-    flex-wrap: wrap;
+    flex-direction: row;
+    border: 1px solid green;
 }
-.dd {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, auto) minmax(0, 2fr));
-    margin: 0;
+
+.card-header img {
+    border: 1px solid red;
 }
-.toggle {
-    padding: 0.6em;
-    border: grey;
-    border-radius: 50%;
-}
-.toggle.on {
-    background-color: green;
-}
-.toggle.off {
-    background-color: red;
-}
-.button {
-    display: block;
-    border: outset 0.2em;
-    border-radius: 50%;
-    border-color: silver;
-    background-color: silver;
-    width: 1.4em;
-    height: 1.4em;
-}
-.value {
-    padding-left: 0.5em;
+
+.card-header.properties {
     display: flex;
-    align-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    border: 1px solid blue;
+}
+
+.card-header.properties.vacuum-name {
+    border: 1px solid yellow;
+}
+.card-header.propertiess.vacuum-state {
+    border: 1px solid yellow;
+}
+
+.card-header.battery {
+    border: 1px solid purple;
+}
+
+.card-header.battery ha-icon {
+    border: 1px solid purple;
+}
+.card-header.battery.icon-title {
+    border: 1px solid purple;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 3px;
 }

@@ -11,6 +11,7 @@ import {
     cardHeader,
     haCard,
 } from './html/card.html';
+import VACUUM_IMAGE from './media/vacuum.svg';
 import { Config } from './types';
 
 export class VacuumCardMinTypeScript extends LitElement {
@@ -53,32 +54,34 @@ export class VacuumCardMinTypeScript extends LitElement {
     }
 
     render() {
+        // TODO : link with HA entity
+        const vacuum = {
+            attributes: {
+                state: 'cleaning',
+                battery_level: 90,
+                battery_icon: 'mdi:battery-90',
+            },
+            name: 'Dobby',
+        };
+
         return haCard(
             this._header,
-            cardHeader(this._entity),
-            !this._state
-                ? cardError(this._entity)
-                : cardContent(this._name, this.doToggle, this._status),
+            !this._state ? '' : cardHeader(vacuum, VACUUM_IMAGE),
+            !this._state ? cardError(this._entity) : cardContent(),
             cardFooter(this._version),
         );
     }
 
-    // event handling
-    doToggle() {
-        this._hass.callService('input_boolean', 'toggle', {
-            entity_id: this._entity,
-        });
-    }
-
     // card configuration
     static getConfigElement() {
-        return document.createElement('toggle-card-typescript-editor');
+        return document.createElement('vacuum-card-min-editor');
     }
-
-    static getStubConfig() {
-        return {
-            entity: 'input_boolean.tcts',
-            header: '',
-        };
-    }
+    /*
+	static getStubConfig() {
+	    return {
+	        entity: 'input_boolean.tcvj',
+	        header: '',
+	    };
+	}
+	*/
 }
