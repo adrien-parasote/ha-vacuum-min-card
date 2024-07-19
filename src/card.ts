@@ -1,9 +1,10 @@
-import { html, LitElement, TemplateResult, nothing } from 'lit';
+import { CSSResultGroup, html, LitElement, TemplateResult, nothing } from 'lit';
 import { styles } from './css/card.styles';
 import { state } from 'lit/decorators/state.js';
 
 import { HassEntity } from 'home-assistant-js-websocket';
 import { HomeAssistant, LovelaceCardConfig } from 'custom-card-helpers';
+
 
 interface Config extends LovelaceCardConfig {
   header: string;
@@ -43,7 +44,9 @@ export class VacuumCardMinTypeScript extends LitElement {
   }
 
   // declarative part
-  static styles = styles;
+  static get styles(): CSSResultGroup {
+    return styles;
+  }
 
   render() {
     let content: TemplateResult;

@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit';
+import { CSSResultGroup, html, LitElement } from 'lit';
 import { styles } from './css/card.styles';
 import { state } from 'lit/decorators/state.js';
 
@@ -9,7 +9,9 @@ export class VacuumCardMinTypeScriptEditor extends LitElement {
     this._config = config;
   }
 
-  static styles = styles;
+  static get styles(): CSSResultGroup {
+    return styles;
+  }
 
   render() {
     return html`
