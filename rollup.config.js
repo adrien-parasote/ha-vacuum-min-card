@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import json from '@rollup/plugin-json';
 import postcss from 'rollup-plugin-postcss';
+import postcssLit from 'rollup-plugin-postcss-lit';
 import postcssPresetEnv from 'postcss-preset-env';
 import image from '@rollup/plugin-image';
 import typescript from 'rollup-plugin-typescript2';
@@ -23,6 +24,9 @@ const plugins = [
     ],
     extract: false
   }),
+  postcssLit(  {
+        importPackage: 'lit-element',
+      }),
   image(),
   typescript(),
   terser({
