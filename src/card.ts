@@ -13,6 +13,7 @@ export class VacuumCardMinTypeScript extends LitElement {
   @state() private _name: string;
   @state() private _state: HassEntity;
   @state() private _status: string;
+  @state() private _version: string;
 
   // private property
   private _hass;
@@ -21,6 +22,7 @@ export class VacuumCardMinTypeScript extends LitElement {
   setConfig(config: Config) {
     this._header = config.header === '' ? nothing : config.header;
     this._entity = config.entity;
+	this._version = 'COMPONENT_VERSION_VALUE'; // String will be replaced by Rollup
     // call set hass() to immediately adjust to a changed entity
     // while editing the entity in the card editor
     if (this._hass) {
@@ -51,6 +53,7 @@ export class VacuumCardMinTypeScript extends LitElement {
       content = html`
         <dl class="dl">
           <dt class="dt">${this._name}</dt>
+		  <dt class="dt">v${this._version}</dt>
           <dd class="dd" @click="${this.doToggle}">
             <span class="toggle ${this._status}">
               <span class="button"></span>
