@@ -16,5 +16,6 @@ window.customCards = window.customCards || [];
 window.customCards.push({
   type: 'vacuum-card-min',
   name: 'Vacuum card minimal',
-  description: 'Minimal card to monitor vacuum cleaner for Home Assistant Lovelace UI'
+  description:
+    'Minimal card to monitor vacuum cleaner for Home Assistant Lovelace UI'
 });

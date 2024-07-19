@@ -27,7 +27,7 @@ const plugins = [
   typescript(),
   terser({
     output: {
-		quote_style: 3,
+      quote_style: 3,
       comments: false
     }
   })
