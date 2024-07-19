@@ -1,4 +1,4 @@
 // declaration.d.ts
 declare module './css/*.css';
-declare module './html/*.html';
+declare module './html/*.ts';
 declare module './media/*.svg';

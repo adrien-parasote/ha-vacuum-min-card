@@ -1,6 +1,6 @@
 {
     "name": "vacuum-min-card",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "type": "module",
     "description": "Minimal card to monitor vacuum cleaner for Home Assistant Lovelace UI",
     "main": "dist/vacuum-card-min.js",
@@ -25,7 +25,7 @@
         "lint:fix": "eslint . --ext .ts --fix",
         "format": "prettier --config .prettierrc . --write",
         "build": "rollup -c",
-        "all": "npm-run-all lint format build",
+        "all": "npm-run-all format lint build",
         "version:patch": "npm version patch --json true --no-git-tag-version",
         "version:minor": "npm version minor --json true --no-git-tag-version",
         "version:major": "npm version major --json true --no-git-tag-version",

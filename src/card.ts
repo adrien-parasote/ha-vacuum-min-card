@@ -1,9 +1,16 @@
 import { HomeAssistant } from 'custom-card-helpers';
 import { HassEntity } from 'home-assistant-js-websocket';
-import { CSSResultGroup, LitElement, TemplateResult, html, nothing } from 'lit';
+import { CSSResultGroup, LitElement, nothing } from 'lit';
 import { state } from 'lit/decorators/state.js';
 
 import styles from './css/card.css';
+import {
+    cardContent,
+    cardError,
+    cardFooter,
+    cardHeader,
+    haCard,
+} from './html/card.html';
 import { Config } from './types';
 
 export class VacuumCardMinTypeScript extends LitElement {
@@ -46,30 +53,14 @@ export class VacuumCardMinTypeScript extends LitElement {
     }
 
     render() {
-        let content: TemplateResult;
-        if (!this._state) {
-            content = html`
-                <p class="error">${this._entity} is unavailable.</p>
-            `;
-        } else {
-            content = html`
-                <dl class="dl">
-                    <dt class="dt">${this._name}</dt>
-                    <dt class="dt">v${this._version}</dt>
-                    <dd class="dd" @click="${this.doToggle}">
-                        <span class="toggle ${this._status}">
-                            <span class="button"></span>
-                        </span>
-                        <span class="value">${this._status}</span>
-                    </dd>
-                </dl>
-            `;
-        }
-        return html`
-            <ha-card header="${this._header}">
-                <div class="card-content">${content}</div>
-            </ha-card>
-        `;
+        return haCard(
+            this._header,
+            cardHeader(this._entity),
+            !this._state
+                ? cardError(this._entity)
+                : cardContent(this._name, this.doToggle, this._status),
+            cardFooter(this._version),
+        );
     }
 
     // event handling
