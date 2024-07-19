@@ -1,8 +1,8 @@
 import { html } from 'lit';
 
-export const haCard = (header, content, footer) => html`
+export const haCard = (top, content, footer) => html`
     <ha-card>
-        <div class="card-header">${header}</div>
+        <div class="card-top">${top}</div>
         <div class="card-content">${content}</div>
         <div class="card-footer">${footer}</div>
     </ha-card>
@@ -11,7 +11,7 @@ export const haCard = (header, content, footer) => html`
 export const cardError = (entity) =>
     html`<p class="error">${entity} is unavailable.</p>`;
 
-export const cardHeader = (vacuum, imgSrc) =>
+export const cardTop = (vacuum, imgSrc) =>
     html`<img class="vacuum ${vacuum.state}" src="${imgSrc}" />
         <div class="properties">
             <div class="vacuum-name">${vacuum.name}</div>

@@ -8,7 +8,7 @@ import {
     cardContent,
     cardError,
     cardFooter,
-    cardHeader,
+    cardTop,
     haCard,
 } from './html/card.html';
 import VACUUM_IMAGE from './media/vacuum.svg';
@@ -65,7 +65,7 @@ export class VacuumCardMinTypeScript extends LitElement {
         };
 
         return haCard(
-            !this._state ? '' : cardHeader(vacuum, VACUUM_IMAGE),
+            !this._state ? '' : cardTop(vacuum, VACUUM_IMAGE),
             !this._state ? cardError(this._entity) : cardContent(),
             cardFooter(this._version),
         );
