@@ -1,11 +1,15 @@
 import { CSSResultGroup, html, LitElement } from 'lit';
-import { styles } from './css/card.styles';
+import styles from './css/editor.css';
 import { state } from 'lit/decorators/state.js';
+import { Config } from './types';
 
 export class VacuumCardMinTypeScriptEditor extends LitElement {
   @state() _config;
 
-  setConfig(config) {
+  setConfig(config: Config) {
+    if (!config.entities) {
+      throw new Error('You need to define entities');
+    }
     this._config = config;
   }
 

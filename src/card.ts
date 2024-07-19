@@ -1,15 +1,10 @@
 import { CSSResultGroup, html, LitElement, TemplateResult, nothing } from 'lit';
-import { styles } from './css/card.styles';
+import styles from './css/card.css';
 import { state } from 'lit/decorators/state.js';
+import { Config } from './types';
 
 import { HassEntity } from 'home-assistant-js-websocket';
-import { HomeAssistant, LovelaceCardConfig } from 'custom-card-helpers';
-
-
-interface Config extends LovelaceCardConfig {
-  header: string;
-  entity: string;
-}
+import { HomeAssistant } from 'custom-card-helpers';
 
 export class VacuumCardMinTypeScript extends LitElement {
   // internal reactive states
