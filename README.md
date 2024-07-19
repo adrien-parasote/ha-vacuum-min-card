@@ -6,5 +6,3 @@ TODO :
 
 -   card code
 -   rollup minify
--   mustache templating ?
--   dynamique version
