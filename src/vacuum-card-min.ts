@@ -1,5 +1,5 @@
-import { ToggleCardTypeScript } from './card';
-import { ToggleCardTypeScriptEditor } from './editor';
+import { VacuumCardMinTypeScript } from './card';
+import { VacuumCardMinTypeScriptEditor } from './editor';
 
 declare global {
   interface Window {
@@ -7,15 +7,14 @@ declare global {
   }
 }
 
-customElements.define('toggle-card-typescript', ToggleCardTypeScript);
-customElements.define(
-  'toggle-card-typescript-editor',
-  ToggleCardTypeScriptEditor
-);
+// Define custom elements
+customElements.define('vacuum-card-min', VacuumCardMinTypeScript);
+customElements.define('vacuum-card-min-editor', VacuumCardMinTypeScriptEditors);
 
+// Create render card
 window.customCards = window.customCards || [];
 window.customCards.push({
-  type: 'toggle-card-typescript',
-  name: 'toggle card with TypeScript',
-  description: 'Turn an entity on and off'
+  type: 'vacuum-card-min',
+  name: 'Vacuum card minimal',
+  description: 'Minimal card to monitor vacuum cleaner for Home Assistant Lovelace UI'
 });

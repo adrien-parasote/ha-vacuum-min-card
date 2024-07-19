@@ -1,25 +1,15 @@
 import { css, html, LitElement } from 'lit';
+import { styles } from './css/card.styles';
 import { state } from 'lit/decorators/state.js';
 
-export class ToggleCardTypeScriptEditor extends LitElement {
+export class VacuumCardMinTypeScriptEditors extends LitElement {
   @state() _config;
 
   setConfig(config) {
     this._config = config;
   }
 
-  static styles = css`
-    .table {
-      display: table;
-    }
-    .row {
-      display: table-row;
-    }
-    .cell {
-      display: table-cell;
-      padding: 0.5em;
-    }
-  `;
+  static styles = styles;
 
   render() {
     return html`

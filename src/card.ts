@@ -1,5 +1,5 @@
 import { html, LitElement, TemplateResult, nothing } from 'lit';
-import { styles } from './card.styles';
+import { styles } from './css/card.styles';
 import { state } from 'lit/decorators/state.js';
 
 import { HassEntity } from 'home-assistant-js-websocket';
@@ -10,7 +10,7 @@ interface Config extends LovelaceCardConfig {
   entity: string;
 }
 
-export class ToggleCardTypeScript extends LitElement {
+export class VacuumCardMinTypeScript extends LitElement {
   // internal reactive states
   @state() private _header: string | typeof nothing;
   @state() private _entity: string;
