@@ -1,5 +1,5 @@
-import { VacuumCardMinTypeScript } from './card';
 import { VacuumCardMinTypeScriptEditor } from './editor';
+import { VacuumCardMinTypeScript } from './card';
 
 declare global {
   interface Window {
@@ -9,7 +9,7 @@ declare global {
 
 // Define custom elements
 customElements.define('vacuum-card-min', VacuumCardMinTypeScript);
-customElements.define('vacuum-card-min-editor', VacuumCardMinTypeScriptEditors);
+customElements.define('vacuum-card-min-editor', VacuumCardMinTypeScriptEditor);
 
 // Create render card
 window.customCards = window.customCards || [];

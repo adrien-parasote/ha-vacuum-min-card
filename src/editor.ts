@@ -1,8 +1,8 @@
-import { css, html, LitElement } from 'lit';
+import { html, LitElement } from 'lit';
 import { styles } from './css/card.styles';
 import { state } from 'lit/decorators/state.js';
 
-export class VacuumCardMinTypeScriptEditors extends LitElement {
+export class VacuumCardMinTypeScriptEditor extends LitElement {
   @state() _config;
 
   setConfig(config) {
