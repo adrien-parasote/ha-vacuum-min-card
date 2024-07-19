@@ -65,7 +65,6 @@ export class VacuumCardMinTypeScript extends LitElement {
         };
 
         return haCard(
-            this._header,
             !this._state ? '' : cardHeader(vacuum, VACUUM_IMAGE),
             !this._state ? cardError(this._entity) : cardContent(),
             cardFooter(this._version),

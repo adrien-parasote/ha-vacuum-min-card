@@ -1,7 +1,7 @@
 import { html } from 'lit';
 
-export const haCard = (name, header, content, footer) => html`
-    <ha-card header="${name}">
+export const haCard = (header, content, footer) => html`
+    <ha-card>
         <div class="card-header">${header}</div>
         <div class="card-content">${content}</div>
         <div class="card-footer">${footer}</div>

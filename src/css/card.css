@@ -7,10 +7,9 @@
 
 ha-card {
     flex-direction: column;
-    flex: 1;
     position: relative;
     overflow: hidden;
-    padding: 10px;
+    padding: 10px 10px 0;
 }
 .footer {
     color: var(--primary-text-color);
@@ -29,29 +28,31 @@ ha-card {
 
 .card-header img {
     border: 1px solid red;
+    width: 75px;
+    height: 75px;
 }
 
-.card-header.properties {
+.card-header .properties {
     display: flex;
     flex-direction: column;
     border: 1px solid blue;
 }
 
-.card-header.properties.vacuum-name {
+.card-header .properties. vacuum-name {
     border: 1px solid yellow;
 }
-.card-header.propertiess.vacuum-state {
+.card-header .propertiess .vacuum-state {
     border: 1px solid yellow;
 }
 
-.card-header.battery {
+.card-header .battery {
     border: 1px solid purple;
 }
 
-.card-header.battery ha-icon {
+.card-header .battery ha-icon {
     border: 1px solid purple;
 }
-.card-header.battery.icon-title {
+.card-header .battery.icon-title {
     border: 1px solid purple;
     display: inline-block;
     vertical-align: middle;
