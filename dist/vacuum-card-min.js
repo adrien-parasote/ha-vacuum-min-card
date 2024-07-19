@@ -66,9 +66,10 @@ function t(t,e,s,i){var r,n=arguments.length,o=n<3?e:null===i?i=Object.getOwnPro
   align-content: center;
   flex-wrap: wrap;
 }
-`;at(ut);class _t extends nt{setConfig(t){this._header=''===t.header?W:t.header,this._entity=t.entity,this._hass&&(this.hass=this._hass)}set hass(t){if(this._hass=t,this._state=t.states[this._entity],this._state){this._status=this._state.state;const t=this._state.attributes.friendly_name;this._name=t||this._entity}}static get styles(){return ut}render(){let t;return t=this._state?I`
+`;at(ut);class _t extends nt{setConfig(t){this._header=''===t.header?W:t.header,this._entity=t.entity,this._version='0.0.3',this._hass&&(this.hass=this._hass)}set hass(t){if(this._hass=t,this._state=t.states[this._entity],this._state){this._status=this._state.state;const t=this._state.attributes.friendly_name;this._name=t||this._entity}}static get styles(){return ut}render(){let t;return t=this._state?I`
         <dl class="dl">
           <dt class="dt">${this._name}</dt>
+          <dt class="dt">v${this._version}</dt>
           <dd class="dd" @click="${this.doToggle}">
             <span class="toggle ${this._status}">
               <span class="button"></span>
@@ -80,4 +81,4 @@ function t(t,e,s,i){var r,n=arguments.length,o=n<3?e:null===i?i=Object.getOwnPro
       <ha-card header="${this._header}">
         <div class="card-content">${t}</div>
       </ha-card>
-    `}doToggle(){this._hass.callService('input_boolean','toggle',{entity_id:this._entity})}static getConfigElement(){return document.createElement('toggle-card-typescript-editor')}static getStubConfig(){return{entity:'input_boolean.tcts',header:''}}}t([dt()],_t.prototype,"_header",void 0),t([dt()],_t.prototype,"_entity",void 0),t([dt()],_t.prototype,"_name",void 0),t([dt()],_t.prototype,"_state",void 0),t([dt()],_t.prototype,"_status",void 0),customElements.define('vacuum-card-min',_t),customElements.define('vacuum-card-min-editor',pt),window.customCards=window.customCards||[],window.customCards.push({type:'vacuum-card-min',name:'Vacuum card minimal',description:'Minimal card to monitor vacuum cleaner for Home Assistant Lovelace UI'});
+    `}doToggle(){this._hass.callService('input_boolean','toggle',{entity_id:this._entity})}static getConfigElement(){return document.createElement('toggle-card-typescript-editor')}static getStubConfig(){return{entity:'input_boolean.tcts',header:''}}}t([dt()],_t.prototype,"_header",void 0),t([dt()],_t.prototype,"_entity",void 0),t([dt()],_t.prototype,"_name",void 0),t([dt()],_t.prototype,"_state",void 0),t([dt()],_t.prototype,"_status",void 0),t([dt()],_t.prototype,"_version",void 0),customElements.define('vacuum-card-min',_t),customElements.define('vacuum-card-min-editor',pt),window.customCards=window.customCards||[],window.customCards.push({type:'vacuum-card-min',name:'Vacuum card minimal',description:'Minimal card to monitor vacuum cleaner for Home Assistant Lovelace UI'});

@@ -19,11 +19,11 @@ const plugins = [
   commonjs(),
   json(),
   replace({
-      values: {
-        'COMPONENT_VERSION_VALUE': pkg.version,
-      },
-      preventAssignment: true,
-    }),
+    values: {
+      COMPONENT_VERSION_VALUE: pkg.version
+    },
+    preventAssignment: true
+  }),
   postcss({
     plugins: [
       postcssPresetEnv({
@@ -35,9 +35,9 @@ const plugins = [
     ],
     extract: false
   }),
-  postcssLit(  {
-        importPackage: 'lit-element',
-      }),
+  postcssLit({
+    importPackage: 'lit-element'
+  }),
   image(),
   typescript(),
   terser({
