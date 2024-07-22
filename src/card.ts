@@ -1,6 +1,5 @@
 import { HomeAssistant } from 'custom-card-helpers';
 import { HassEntity } from 'home-assistant-js-websocket';
-import { Context } from 'home-assistant-js-websocket';
 import { CSSResultGroup, LitElement, nothing } from 'lit';
 import { state } from 'lit/decorators/state.js';
 
@@ -13,12 +12,8 @@ import {
     haCard,
 } from './html/card.html';
 import VACUUM_IMAGE from './media/vacuum.svg';
-import {
-    Config,
-    VacuumEntity,
-    VacuumEntityAttributes,
-    VacuumEntityState,
-} from './types';
+import { Dobby } from './mocks/create-vacuum';
+import { Config } from './types';
 
 export class VacuumCardMinTypeScript extends LitElement {
     // internal reactive states
@@ -59,28 +54,8 @@ export class VacuumCardMinTypeScript extends LitElement {
         return styles;
     }
 
-    get entity(): VacuumEntity {
-        const context: Context = {
-            id: 'context id',
-            user_id: 'user_id',
-            parent_id: 'parent_id',
-        };
-        const state: VacuumEntityState = 'cleaning';
-        const attr: VacuumEntityAttributes = {
-            state: state,
-            battery_level: 90,
-            battery_icon: 'mdi:battery-90',
-        };
-        const vacuum: VacuumEntity = {
-            entity_id: 'entity_id',
-            state: 'state',
-            last_changed: 'last_changed',
-            last_updated: 'last_updated',
-            context: context,
-            attributes: attr,
-            name: 'Dobby',
-        };
-        return vacuum;
+    get entity(): HassEntity {
+        return Dobby['vacuum.robot_vacuum'];
     }
 
     render() {
@@ -108,7 +83,7 @@ export class VacuumCardMinTypeScript extends LitElement {
 	}
 	*/
 
-    private _isRunning(vacuum: VacuumEntity): boolean {
+    private _isRunning(vacuum: HassEntity): boolean {
         return vacuum.state == 'cleaning' || vacuum.state == 'returning';
     }
 }
