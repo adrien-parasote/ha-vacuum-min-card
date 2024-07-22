@@ -66,4 +66,12 @@ ha-card {
 }
 .card-content div {
     border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+}
+.card-content div .icon-title {
+    border: 1px solid purple;
+    padding-top: 3px;
+    font-size: small;
+    align-self: center;
 }

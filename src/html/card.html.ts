@@ -22,10 +22,20 @@ export const cardTop = (vacuum, imgSrc) =>
             <span class="icon-title">${vacuum.attributes.battery_level}%</span>
         </div> `;
 
-export const cardContent = () =>
-    html`<div>home</div>
-        <div>STOP / Start</div>
-        <div>Clean room with list</div> `;
+export const cardContent = (running) =>
+    html` <div>
+            <ha-icon icon="mid-home" onclick="console.log('home')"></ha-icon>
+            <span class="icon-title">Home</span>
+        </div>
+        <div>
+            <ha-icon
+                icon="${running ? html`mid-pause` : html`mid-play`}"
+                onclick="console.log('play / pause ${running}')"
+            ></ha-icon>
+            <span class="icon-title"
+                >${running ? html`Pause` : html`Clean`}</span
+            >
+        </div>`;
 
 export const cardFooter = (version) =>
     html`<div class="footer">v${version}</div>`;
