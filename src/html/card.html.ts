@@ -29,7 +29,7 @@ export const cardContent = (running) =>
         </div>
         <div>
             <ha-icon
-                icon="${running ? html`mid-pause` : html`mid-play`}"
+                icon="${running ? html`mdi-pause` : html`mdi-play`}"
                 onclick="console.log('play / pause ${running}')"
             ></ha-icon>
             <span class="icon-title"
