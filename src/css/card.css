@@ -68,6 +68,6 @@ ha-card {
     --mdc-icon-size: 40px;
 }
 
-.card-content ha-icon:last-child {
+.card-content ha-icon:fist-child {
     margin-left: auto;
 }
