@@ -10,7 +10,7 @@ const defaults = {
     attributes: {
         fan_speed_list: ['Silent', 'Standard', 'Medium', 'Turbo', 'Gentle'],
         battery_level: 80,
-        battery_icon: 'mdi:battery-charging-100',
+        battery_icon: 'mdi:battery-charging-80',
         fan_speed: 'Standard',
         status: 'Charging',
         friendly_name: 'Dobby',

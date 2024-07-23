@@ -14,8 +14,8 @@ export const cardError = (entity) =>
 export const cardTop = (vacuum, imgSrc) =>
     html`<img class="vacuum ${vacuum.state}" src="${imgSrc}" />
         <div class="properties">
-            <div class="vacuum-name">${vacuum.name}</div>
-            <div class="vacuum-state">${vacuum.attributes.state}</div>
+            <div class="vacuum-name">${vacuum.friendly_name}</div>
+            <div class="vacuum-state">${vacuum.state}</div>
         </div>
         <div class="battery">
             <ha-icon icon="${vacuum.attributes.battery_icon}"></ha-icon>
@@ -24,12 +24,12 @@ export const cardTop = (vacuum, imgSrc) =>
 
 export const cardContent = (running) =>
     html` <div>
-            <ha-icon icon="mid-home" onclick="console.log('home')"></ha-icon>
+            <ha-icon icon="mdi:home" onclick="console.log('home')"></ha-icon>
             <span class="icon-title">Home</span>
         </div>
         <div>
             <ha-icon
-                icon="${running ? html`mdi-pause` : html`mdi-play`}"
+                icon="${running ? html`mdi:pause` : html`mdi:play`}"
                 onclick="console.log('play / pause ${running}')"
             ></ha-icon>
             <span class="icon-title"
