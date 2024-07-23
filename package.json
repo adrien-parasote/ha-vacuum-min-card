@@ -1,6 +1,6 @@
 {
     "name": "vacuum-min-card",
-    "version": "0.0.15",
+    "version": "0.0.16",
     "type": "module",
     "description": "Minimal card to monitor vacuum cleaner for Home Assistant Lovelace UI",
     "main": "dist/vacuum-card-min.js",
