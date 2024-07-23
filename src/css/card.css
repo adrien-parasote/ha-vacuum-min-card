@@ -60,6 +60,7 @@ ha-card {
 
 .card-content {
     margin: 0;
+	padding: 0;
     border: 1px solid blue;
     display: flex;
     flex-direction: row;
