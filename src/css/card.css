@@ -64,8 +64,10 @@ ha-card {
     display: flex;
     flex-direction: row;
 }
-.card-content div ha-icon {
-    self-align: center;
-    width: var(--mdc-icon-size, 75px);
-    height: var(--mdc-icon-size, 75px);
+.card-content ha-icon {
+    --mdc-icon-size: 40px;
+}
+
+.card-content ha-icon:last-child {
+  margin-left: auto;
 }
