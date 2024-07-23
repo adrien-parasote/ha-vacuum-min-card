@@ -23,19 +23,16 @@ export const cardTop = (vacuum, imgSrc) =>
         </div> `;
 
 export const cardContent = (running) =>
-    html` <div>
-            <ha-icon icon="mdi:home" onclick="console.log('home')"></ha-icon>
-            <span class="icon-title">Home</span>
-        </div>
-        <div>
-            <ha-icon
-                icon="${running ? html`mdi:pause` : html`mdi:play`}"
-                onclick="console.log('play / pause ${running}')"
-            ></ha-icon>
-            <span class="icon-title"
-                >${running ? html`Pause` : html`Clean`}</span
-            >
-        </div>`;
+    html`<ha-icon icon="mdi:home" onclick="console.log('home')"></ha-icon>
+        <ha-icon
+            icon="${running ? 'mdi:pause' : 'mdi:play'}"
+            onclick="console.log('play / pause ${running}')"
+        ></ha-icon>
+
+        <ha-icon
+            icon="mdi:map-marker"
+            onclick="console.log('locate')"
+        ></ha-icon>`;
 
 export const cardFooter = (version) =>
     html`<div class="footer">v${version}</div>`;
